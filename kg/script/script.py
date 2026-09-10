@@ -1615,6 +1615,7 @@ def kg_hurado(format_, args):
     elif existence_check.status_code == 200:
         data = existence_check.json()
         found_id = data['id']
+        json['id'] = found_id
         update = requests.put(
             f'{hurado_prefix}/api/v1/tasks/{found_id}/kg',
             headers=HURADO_HEADERS, 
